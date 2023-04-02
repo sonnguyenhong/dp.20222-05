@@ -1,7 +1,7 @@
 package entity.shipping;
 
 import entity.order.Order;
-import org.example.DistanceCalculator;
+//import org.example.DistanceCalculator;
 
 public class DeliveryInfo {
 
@@ -10,21 +10,23 @@ public class DeliveryInfo {
     protected String province;
     protected String address;
     protected String shippingInstructions;
-    protected DistanceCalculator distanceCalculator;
+//    protected DistanceCalculator distanceCalculator;
 
-    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceCalculator distanceCalculator) {
+    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions
+//            , DistanceCalculator distanceCalculator
+    ) {
         this.name = name;
         this.phone = phone;
         this.province = province;
         this.address = address;
         this.shippingInstructions = shippingInstructions;
-        this.distanceCalculator = distanceCalculator;
+//        this.distanceCalculator = distanceCalculator;
     }
 
-    public int calculateShippingFee(Order order) {
-        int distance = distanceCalculator.calculateDistance(address, province);
-        return (int) (distance * 1.2);
-    }
+//    public int calculateShippingFee(Order order) {
+//        int distance = distanceCalculator.calculateDistance(address, province);
+//        return (int) (distance * 1.2);
+//    }
 
     public String getName() {
         return name;
