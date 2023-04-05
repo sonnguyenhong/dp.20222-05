@@ -5,11 +5,11 @@ import entity.order.Order;
 
 public class DeliveryInfo {
 
-    protected String name;
-    protected String phone;
-    protected String province;
-    protected String address;
-    protected String shippingInstructions;
+    private String name;
+    private String phone;
+    private String province;
+    private String address;
+    private String shippingInstructions;
 //    protected DistanceCalculator distanceCalculator;
 
     public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions
@@ -46,5 +46,25 @@ public class DeliveryInfo {
 
     public String getShippingInstructions() {
         return shippingInstructions;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setShippingInstructions(String shippingInstructions) {
+        this.shippingInstructions = shippingInstructions;
     }
 }

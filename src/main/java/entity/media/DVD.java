@@ -7,13 +7,13 @@ import java.util.List;
 
 public class DVD extends Media {
 
-    String discType;
-    String director;
-    int runtime;
-    String studio;
-    String subtitles;
-    Date releasedDate;
-    String filmType;
+    private String discType;
+    private String director;
+    private int runtime;
+    private String studio;
+    private String subtitles;
+    private Date releasedDate;
+    private String filmType;
 
     public DVD() throws SQLException{
 
@@ -96,17 +96,22 @@ public class DVD extends Media {
 
     @Override
     public String toString() {
-        String basicInformation = "{" +
-                " id='" + id + "'" +
-                ", title='" + title + "'" +
-                ", category='" + category + "'" +
-                ", price='" + price + "'" +
-                ", quantity='" + quantity + "'" +
-                ", type='" + type + "'" +
-                ", imageURL='" + imageURL + "'" +
-                "}";
-        return "{" + basicInformation + " discType='" + discType + "'" + ", director='" + director + "'" + ", runtime='"
-                + runtime + "'" + ", studio='" + studio + "'" + ", subtitles='" + subtitles + "'" + ", releasedDate='"
-                + releasedDate + "'" + ", filmType='" + filmType + "'" + "}";
+        try {
+            String basicInformation = "{" +
+                    " id='" + this.getId() + "'" +
+                    ", title='" + this.getTitle() + "'" +
+                    ", category='" + this.getCategory() + "'" +
+                    ", price='" + this.getPrice() + "'" +
+                    ", quantity='" + this.getQuantity() + "'" +
+                    ", type='" + this.getType() + "'" +
+                    ", imageURL='" + this.getImageURL() + "'" +
+                    "}";
+            return "{" + basicInformation + " discType='" + discType + "'" + ", director='" + director + "'" + ", runtime='"
+                    + runtime + "'" + ", studio='" + studio + "'" + ", subtitles='" + subtitles + "'" + ", releasedDate='"
+                    + releasedDate + "'" + ", filmType='" + filmType + "'" + "}";
+        } catch (SQLException ex) {
+            System.out.println("SQL Exception occurred!");
+            return ex.getMessage();
+        }
     }
 }

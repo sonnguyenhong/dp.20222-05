@@ -7,10 +7,10 @@ import java.util.List;
 
 public class CD extends Media {
 
-    String artist;
-    String recordLabel;
-    String musicType;
-    Date releasedDate;
+    private String artist;
+    private String recordLabel;
+    private String musicType;
+    private Date releasedDate;
 
     public CD() throws SQLException{
 
@@ -63,17 +63,22 @@ public class CD extends Media {
 
     @Override
     public String toString() {
-        String basicInformation = "{" +
-                " id='" + id + "'" +
-                ", title='" + title + "'" +
-                ", category='" + category + "'" +
-                ", price='" + price + "'" +
-                ", quantity='" + quantity + "'" +
-                ", type='" + type + "'" +
-                ", imageURL='" + imageURL + "'" +
-                "}";
-        return "{" + basicInformation + " artist='" + artist + "'" + ", recordLabel='" + recordLabel + "'"
-                + "'" + ", musicType='" + musicType + "'" + ", releasedDate='"
-                + releasedDate + "'" + "}";
+        try {
+            String basicInformation = "{" +
+                    " id='" + this.getId() + "'" +
+                    ", title='" + this.getTitle() + "'" +
+                    ", category='" + this.getCategory() + "'" +
+                    ", price='" + this.getPrice() + "'" +
+                    ", quantity='" + this.getQuantity() + "'" +
+                    ", type='" + this.getType() + "'" +
+                    ", imageURL='" + this.getImageURL() + "'" +
+                    "}";
+            return "{" + basicInformation + " artist='" + artist + "'" + ", recordLabel='" + recordLabel + "'"
+                    + "'" + ", musicType='" + musicType + "'" + ", releasedDate='"
+                    + releasedDate + "'" + "}";
+        } catch (SQLException ex) {
+            System.out.println("SQL Exception occurred!");
+            return ex.getMessage();
+        }
     }
 }

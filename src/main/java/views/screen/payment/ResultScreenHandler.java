@@ -64,4 +64,52 @@ public class ResultScreenHandler extends BaseScreenHandler {
 	void confirmPayment(MouseEvent event) throws IOException {
 		homeScreenHandler.show();
 	}
+
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Label getPageTitle() {
+		return pageTitle;
+	}
+
+	public void setPageTitle(Label pageTitle) {
+		this.pageTitle = pageTitle;
+	}
+
+	public Label getResultLabel() {
+		return resultLabel;
+	}
+
+	public void setResultLabel(Label resultLabel) {
+		this.resultLabel = resultLabel;
+	}
+
+	public Button getOkButton() {
+		return okButton;
+	}
+
+	public void setOkButton(Button okButton) {
+		this.okButton = okButton;
+	}
+
+	public Label getMessageLabel() {
+		return messageLabel;
+	}
+
+	public void setMessageLabel(Label messageLabel) {
+		this.messageLabel = messageLabel;
+	}
 }

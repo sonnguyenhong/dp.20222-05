@@ -76,7 +76,7 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 		final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
 		name.focusedProperty().addListener((observable,  oldValue,  newValue) -> {
 			if(newValue && firstTime.get()){
-				content.requestFocus(); // Delegate the focus to container
+				this.getContent().requestFocus(); // Delegate the focus to container
 				firstTime.setValue(false); // Variable value changed for future references
 			}
 		});
@@ -127,4 +127,59 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 		// TODO: implement later on if we need
 	}
 
+	public Label getScreenTitle() {
+		return screenTitle;
+	}
+
+	public void setScreenTitle(Label screenTitle) {
+		this.screenTitle = screenTitle;
+	}
+
+	public TextField getName() {
+		return name;
+	}
+
+	public void setName(TextField name) {
+		this.name = name;
+	}
+
+	public TextField getPhone() {
+		return phone;
+	}
+
+	public void setPhone(TextField phone) {
+		this.phone = phone;
+	}
+
+	public TextField getAddress() {
+		return address;
+	}
+
+	public void setAddress(TextField address) {
+		this.address = address;
+	}
+
+	public TextField getInstructions() {
+		return instructions;
+	}
+
+	public void setInstructions(TextField instructions) {
+		this.instructions = instructions;
+	}
+
+	public ComboBox<String> getProvince() {
+		return province;
+	}
+
+	public void setProvince(ComboBox<String> province) {
+		this.province = province;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 }
