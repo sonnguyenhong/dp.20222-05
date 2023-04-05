@@ -8,7 +8,8 @@ import java.time.LocalDateTime;
 /**
  * @author
  */
-/// content Coupling
+
+/// Common Coupling
 public class SessionInformation {
 	private static SessionInformation instance;
     private User mainUser;
