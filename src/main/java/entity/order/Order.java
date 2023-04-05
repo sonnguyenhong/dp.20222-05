@@ -26,6 +26,7 @@ public class Order {
 
     public Order(Cart cart) {
         List<OrderItem> orderItems = new ArrayList<>();
+        /// fix common coupling
         for (Object object : SessionInformation.getCartInstance().getListMedia()) {
             CartItem cartItem = (CartItem) object;
             OrderItem orderItem = new OrderItem(cartItem.getMedia(),

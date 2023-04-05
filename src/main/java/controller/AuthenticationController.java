@@ -33,23 +33,24 @@ public class AuthenticationController extends BaseController {
         if (SessionInformation.getMainUser() == null || SessionInformation.getExpiredTime() == null || SessionInformation.getExpiredTime().isBefore(LocalDateTime.now())) {
             logout();
             throw new ExpiredSessionException();
-        } else return SessionInformation.getMainUser().cloneInformation();
+        } else return SessionInformation.getMainUser().cloneInformation(); /// fix common coupling
     }
 
     public void login(String email, String password) throws Exception {
         try {
             User user = new UserDAO().authenticate(email, md5(password));
             if (Objects.isNull(user)) throw new FailLoginException();
-            SessionInformation.setMainUser(user);
-            SessionInformation.setExpiredTime(LocalDateTime.now().plusHours(24));
+            SessionInformation.setMainUser(user); /// fix common coupling
+            SessionInformation.setExpiredTime(LocalDateTime.now().plusHours(24)); /// fix common coupling
+
         } catch (SQLException ex) {
             throw new FailLoginException();
         }
     }
 
     public void logout() {
-        SessionInformation.setMainUser(null);
-        SessionInformation.setExpiredTime(null);
+        SessionInformation.setMainUser(null);/// fix common coupling
+        SessionInformation.setExpiredTime(null);/// fix common coupling
     }
 
     /**
