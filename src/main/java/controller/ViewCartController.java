@@ -9,7 +9,7 @@ import entity.cart.Cart;
  * @author nguyenlm
  */
 public class ViewCartController extends BaseController{
-	SessionInformation sessionInformation = SessionInformation.getInstance();
+    SessionInformation sessionInformation = SessionInformation.getInstance();
     /**
      * This method checks the available products in Cart
      * @throws SQLException
