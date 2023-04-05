@@ -18,7 +18,7 @@ public class BaseController {
      * @return CartMedia or null
      */
     public CartItem checkMediaInCart(Media media){
-        return SessionInformation.cartInstance.checkMediaInCart(media);
+        return SessionInformation.getCartInstance().checkMediaInCart(media); /// fix common coupling
     }
 
     /**
@@ -26,6 +26,6 @@ public class BaseController {
      * @return List[CartMedia]
      */
     public List getListCartMedia(){
-        return SessionInformation.cartInstance.getListMedia();
-    }
+        return SessionInformation.getCartInstance().getListMedia();
+    }/// fix common coupling
 }
