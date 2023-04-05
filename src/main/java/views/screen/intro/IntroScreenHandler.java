@@ -21,7 +21,7 @@ public class IntroScreenHandler extends BaseScreenHandler {
 
 
     @FXML
-    ImageView logo;
+    private ImageView logo;
 
     public IntroScreenHandler(Stage stage, String screenPath) throws IOException {
         super(stage, screenPath);
@@ -47,5 +47,13 @@ public class IntroScreenHandler extends BaseScreenHandler {
         File file = new File("src/main/resources/assets/images/Logo.png");
         Image image = new Image(file.toURI().toString());
         logo.setImage(image);
+    }
+
+    public ImageView getLogo() {
+        return logo;
+    }
+
+    public void setLogo(ImageView logo) {
+        this.logo = logo;
     }
 }

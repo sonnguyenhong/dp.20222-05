@@ -16,7 +16,7 @@ public class Order {
     private int subtotal;
     private int tax;
     private List orderMediaList;
-    protected DeliveryInfo deliveryInfo;
+    private DeliveryInfo deliveryInfo;
 
     public Order() {
         this.shippingFees = 0;
@@ -71,5 +71,21 @@ public class Order {
 
     public int getTotal() {
         return this.subtotal + this.tax + this.shippingFees;
+    }
+
+    public void setShippingFees(int shippingFees) {
+        this.shippingFees = shippingFees;
+    }
+
+    public void setSubtotal(int subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public void setTax(int tax) {
+        this.tax = tax;
+    }
+
+    public void setOrderMediaList(List orderMediaList) {
+        this.orderMediaList = orderMediaList;
     }
 }

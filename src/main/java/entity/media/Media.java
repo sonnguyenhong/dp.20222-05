@@ -16,16 +16,16 @@ public class Media {
 
     private static Logger LOGGER = Utils.getLogger(Media.class.getName());
 
-    protected Statement stm;
-    protected int id;
-    protected String title;
-    protected String category;
-    protected int value; // the real price of product (eg: 450)
-    protected int price; // the price which will be displayed on browser (eg: 500)
-    protected int quantity;
-    protected String type;
-    protected String imageURL;
-    protected boolean rushSupported;
+    private Statement stm;
+    private int id;
+    private String title;
+    private String category;
+    private int value; // the real price of product (eg: 450)
+    private int price; // the price which will be displayed on browser (eg: 500)
+    private int quantity;
+    private String type;
+    private String imageURL;
+    private boolean rushSupported;
 
     public Media() throws SQLException {
         stm = AIMSDB.getConnection().createStatement();
@@ -109,5 +109,41 @@ public class Media {
     public Media setType(String type) {
         this.type = type;
         return this;
+    }
+
+    public static Logger getLOGGER() {
+        return LOGGER;
+    }
+
+    public static void setLOGGER(Logger LOGGER) {
+        Media.LOGGER = LOGGER;
+    }
+
+    public Statement getStm() {
+        return stm;
+    }
+
+    public void setStm(Statement stm) {
+        this.stm = stm;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public boolean isRushSupported() {
+        return rushSupported;
+    }
+
+    public void setRushSupported(boolean rushSupported) {
+        this.rushSupported = rushSupported;
     }
 }

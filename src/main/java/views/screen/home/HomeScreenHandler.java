@@ -267,4 +267,92 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             }
         }
     }
+
+    public Label getNumMediaInCart() {
+        return numMediaInCart;
+    }
+
+    public void setNumMediaInCart(Label numMediaInCart) {
+        this.numMediaInCart = numMediaInCart;
+    }
+
+    public ImageView getAimsImage() {
+        return aimsImage;
+    }
+
+    public void setAimsImage(ImageView aimsImage) {
+        this.aimsImage = aimsImage;
+    }
+
+    public ImageView getCartImage() {
+        return cartImage;
+    }
+
+    public void setCartImage(ImageView cartImage) {
+        this.cartImage = cartImage;
+    }
+
+    public VBox getVboxMedia1() {
+        return vboxMedia1;
+    }
+
+    public void setVboxMedia1(VBox vboxMedia1) {
+        this.vboxMedia1 = vboxMedia1;
+    }
+
+    public VBox getVboxMedia2() {
+        return vboxMedia2;
+    }
+
+    public void setVboxMedia2(VBox vboxMedia2) {
+        this.vboxMedia2 = vboxMedia2;
+    }
+
+    public VBox getVboxMedia3() {
+        return vboxMedia3;
+    }
+
+    public void setVboxMedia3(VBox vboxMedia3) {
+        this.vboxMedia3 = vboxMedia3;
+    }
+
+    public HBox getHboxMedia() {
+        return hboxMedia;
+    }
+
+    public void setHboxMedia(HBox hboxMedia) {
+        this.hboxMedia = hboxMedia;
+    }
+
+    public Button getBtnLogin() {
+        return btnLogin;
+    }
+
+    public void setBtnLogin(Button btnLogin) {
+        this.btnLogin = btnLogin;
+    }
+
+    public SplitMenuButton getSplitMenuBtnSearch() {
+        return splitMenuBtnSearch;
+    }
+
+    public void setSplitMenuBtnSearch(SplitMenuButton splitMenuBtnSearch) {
+        this.splitMenuBtnSearch = splitMenuBtnSearch;
+    }
+
+    public List getHomeItems() {
+        return homeItems;
+    }
+
+    public void setHomeItems(List homeItems) {
+        this.homeItems = homeItems;
+    }
+
+    public AuthenticationController getAuthenticationController() {
+        return authenticationController;
+    }
+
+    public void setAuthenticationController(AuthenticationController authenticationController) {
+        this.authenticationController = authenticationController;
+    }
 }

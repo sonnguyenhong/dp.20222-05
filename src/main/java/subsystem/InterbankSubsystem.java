@@ -43,4 +43,12 @@ public class InterbankSubsystem implements InterbankInterface {
 		PaymentTransaction transaction = ctrl.refund(card, amount, contents);
 		return transaction;
 	}
+
+	public InterbankSubsystemController getCtrl() {
+		return ctrl;
+	}
+
+	public void setCtrl(InterbankSubsystemController ctrl) {
+		this.ctrl = ctrl;
+	}
 }

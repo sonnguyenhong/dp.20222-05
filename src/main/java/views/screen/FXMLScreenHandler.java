@@ -10,8 +10,8 @@ import javafx.scene.layout.AnchorPane;
 
 public class FXMLScreenHandler {
 
-	protected FXMLLoader loader;
-	protected AnchorPane content;
+	private FXMLLoader loader;
+	private AnchorPane content;
 
 	public FXMLScreenHandler(String screenPath) throws IOException {
 		this.loader = new FXMLLoader(getClass().getResource(screenPath));
@@ -32,5 +32,13 @@ public class FXMLScreenHandler {
 		File file = new File(path);
 		Image img = new Image(file.toURI().toString());
 		imv.setImage(img);
+	}
+
+	public void setLoader(FXMLLoader loader) {
+		this.loader = loader;
+	}
+
+	public void setContent(AnchorPane content) {
+		this.content = content;
 	}
 }

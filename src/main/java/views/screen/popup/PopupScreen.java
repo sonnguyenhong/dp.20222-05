@@ -16,10 +16,10 @@ import java.io.IOException;
 public class PopupScreen extends BaseScreenHandler {
 
     @FXML
-    ImageView icon;
+    private ImageView icon;
 
     @FXML
-    Label message;
+    private Label message;
 
     public PopupScreen(Stage stage) throws IOException{
         super(stage, ViewsConfig.POPUP_PATH);
@@ -71,5 +71,21 @@ public class PopupScreen extends BaseScreenHandler {
     }
 
     protected void setupFunctionality() throws Exception {
+    }
+
+    public ImageView getIcon() {
+        return icon;
+    }
+
+    public void setIcon(ImageView icon) {
+        this.icon = icon;
+    }
+
+    public Label getMessage() {
+        return message;
+    }
+
+    public void setMessage(Label message) {
+        this.message = message;
     }
 }

@@ -28,22 +28,22 @@ import views.screen.popup.PopupScreen;
 public class MediaHandler extends FXMLScreenHandler implements Observable {
 
     @FXML
-    protected ImageView mediaImage;
+    private ImageView mediaImage;
 
     @FXML
-    protected Label mediaTitle;
+    private Label mediaTitle;
 
     @FXML
-    protected Label mediaPrice;
+    private Label mediaPrice;
 
     @FXML
-    protected Label mediaAvail;
+    private Label mediaAvail;
 
     @FXML
-    protected Spinner<Integer> spinnerChangeNumber;
+    private Spinner<Integer> spinnerChangeNumber;
 
     @FXML
-    protected Button addToCartBtn;
+    private Button addToCartBtn;
 
     private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
     private Media media;
@@ -97,5 +97,73 @@ public class MediaHandler extends FXMLScreenHandler implements Observable {
     @Override
     public void notifyObservers() {
         observerList.forEach(observer -> observer.update(this));
+    }
+
+    public ImageView getMediaImage() {
+        return mediaImage;
+    }
+
+    public void setMediaImage(ImageView mediaImage) {
+        this.mediaImage = mediaImage;
+    }
+
+    public Label getMediaTitle() {
+        return mediaTitle;
+    }
+
+    public void setMediaTitle(Label mediaTitle) {
+        this.mediaTitle = mediaTitle;
+    }
+
+    public Label getMediaPrice() {
+        return mediaPrice;
+    }
+
+    public void setMediaPrice(Label mediaPrice) {
+        this.mediaPrice = mediaPrice;
+    }
+
+    public Label getMediaAvail() {
+        return mediaAvail;
+    }
+
+    public void setMediaAvail(Label mediaAvail) {
+        this.mediaAvail = mediaAvail;
+    }
+
+    public Spinner<Integer> getSpinnerChangeNumber() {
+        return spinnerChangeNumber;
+    }
+
+    public void setSpinnerChangeNumber(Spinner<Integer> spinnerChangeNumber) {
+        this.spinnerChangeNumber = spinnerChangeNumber;
+    }
+
+    public Button getAddToCartBtn() {
+        return addToCartBtn;
+    }
+
+    public void setAddToCartBtn(Button addToCartBtn) {
+        this.addToCartBtn = addToCartBtn;
+    }
+
+    public static Logger getLOGGER() {
+        return LOGGER;
+    }
+
+    public static void setLOGGER(Logger LOGGER) {
+        MediaHandler.LOGGER = LOGGER;
+    }
+
+    public void setMedia(Media media) {
+        this.media = media;
+    }
+
+    public List<Observer> getObserverList() {
+        return observerList;
+    }
+
+    public void setObserverList(List<Observer> observerList) {
+        this.observerList = observerList;
     }
 }
