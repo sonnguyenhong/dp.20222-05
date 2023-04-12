@@ -51,7 +51,11 @@ public class PlaceOrderController extends BaseController {
      * @param order
      * @return Invoice
      */
+<<<<<<< HEAD
  // Stamp coupling
+=======
+    // Stamp coupling
+>>>>>>> 127f077 (comment stamp coupling)
     public Invoice createInvoice(Order order) {
         return new Invoice(order);
     }
