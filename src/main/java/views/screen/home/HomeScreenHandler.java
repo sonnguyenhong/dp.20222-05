@@ -35,7 +35,8 @@ import views.screen.ViewsConfig;
 import views.screen.cart.CartScreenHandler;
 import views.screen.popup.PopupScreen;
 
-
+// Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
+// 2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
 public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 	SessionInformation sessionInformation = SessionInformation.getInstance();
 
