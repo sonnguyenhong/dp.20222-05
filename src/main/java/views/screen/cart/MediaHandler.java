@@ -25,6 +25,8 @@ import utils.Utils;
 import views.screen.FXMLScreenHandler;
 import views.screen.ViewsConfig;
 
+
+// Procedural Cohension (Cac phuong thuc thuc hien theo thu thu: SetCartItem => SetMediaInfo => Initailize Spinner)
 public class MediaHandler extends FXMLScreenHandler {
 
 	private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
