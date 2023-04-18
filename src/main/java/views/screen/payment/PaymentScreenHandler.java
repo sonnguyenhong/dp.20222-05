@@ -19,7 +19,6 @@ import java.util.logging.Logger;
 
 // Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
 // 2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
-
 public class PaymentScreenHandler extends BaseScreenHandler {
 
 	private static final Logger LOGGER = Utils.getLogger(PaymentScreenHandler.class.getName());
