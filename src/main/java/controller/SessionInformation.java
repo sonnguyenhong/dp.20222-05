@@ -17,7 +17,7 @@ public class SessionInformation {
     public static User getMainUser() {
         return mainUser;
     }
-
+ // Stamp coupling
     public static void setMainUser(User mainUser) {
         SessionInformation.mainUser = mainUser;
     }
@@ -25,7 +25,7 @@ public class SessionInformation {
     public static Cart getCartInstance() {
         return cartInstance;
     }
-
+ // Stamp coupling
     public static void setCartInstance(Cart cartInstance) {
         SessionInformation.cartInstance = cartInstance;
     }

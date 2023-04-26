@@ -50,6 +50,7 @@ public class PlaceOrderController extends BaseController {
      * @param order
      * @return Invoice
      */
+ // Stamp coupling
     public Invoice createInvoice(Order order) {
         return new Invoice(order);
     }

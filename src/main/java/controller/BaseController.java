@@ -17,6 +17,7 @@ public class BaseController {
      * @param media
      * @return CartMedia or null
      */
+	// Stamp coupling
     public CartItem checkMediaInCart(Media media){
         return SessionInformation.getCartInstance().checkMediaInCart(media); /// fix content coupling
     }
