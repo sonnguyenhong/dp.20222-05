@@ -12,6 +12,9 @@ import java.util.*;
  * @author hieud
  *
  */
+
+// Vi pham SRP, ham toJSON() co the tach ra trong 1 class JSONConverter rieng
+
 public class MyMap extends LinkedHashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
 

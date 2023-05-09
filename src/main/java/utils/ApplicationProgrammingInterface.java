@@ -17,6 +17,9 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
+// Vi pham SRP vi class ApplicationProgrammingInterface chi nen chua cac phuong thuc get, post, put, ...
+// Cac phuong thuc setUpConnection va allowMethods nen tach ra thanh cac class ConnectionManager va AccessController
+
 public class ApplicationProgrammingInterface {
 
 	public static DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
