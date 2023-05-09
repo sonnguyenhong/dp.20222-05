@@ -13,6 +13,8 @@ import java.util.logging.Logger;
 /**
  * @author nguyenlm Contains helper functions
  */
+
+// Vi pham SRP, Chung ta co the tach ra lam 2 class, cung ke thua class Util la DateUtil va LoggerUtil
 public class Utils {
 
 	public static DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");

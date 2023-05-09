@@ -14,8 +14,8 @@ import java.util.Map;
  * @author
  */
 
-//Vi pham SRP vi InterbankPayloadConverter lam nhieu hon 1 nhiem vu la convert.
-//Nen tach ra 1 class lam nhiem vu extract information nua
+// Vi pham SRP vi InterbankPayloadConverter lam nhieu hon 1 nhiem vu la convert.
+// Nen tach ra 1 class lam nhiem vu extract information nua
 
 public class InterbankPayloadConverter {
 
