@@ -69,7 +69,8 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     private List homeItems;
     private AuthenticationController authenticationController;
-
+ // Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
+ // 2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
     public HomeScreenHandler(Stage stage, String screenPath) throws IOException{
         super(stage, screenPath);
         try {
