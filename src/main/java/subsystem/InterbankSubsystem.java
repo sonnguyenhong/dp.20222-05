@@ -11,6 +11,7 @@ import subsystem.interbank.InterbankSubsystemController;
  * @author hieud
  *
  */
+/// Vi phạm nguyên tắc  DIP: vì lớp InterbankSubsystem phụ thuộc trực tiếp vào InterbankSubsystemControllẻ
 public class InterbankSubsystem implements InterbankInterface {
 
 	/**
