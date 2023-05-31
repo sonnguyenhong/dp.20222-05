@@ -30,7 +30,6 @@ import views.screen.ViewsConfig;
 
 public class MediaHandler extends FXMLScreenHandler {
 	SessionInformation sessionInformation = SessionInformation.getInstance();
-
 	private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
 
 	@FXML

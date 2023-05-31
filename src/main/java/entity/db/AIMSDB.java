@@ -8,8 +8,8 @@ import java.util.logging.Logger;
 import java.sql.Connection;
 import utils.*;
 
+// Singleton DP
 public class AIMSDB {
-
 	private static Logger LOGGER = Utils.getLogger(Connection.class.getName());
 	private static Connection connect;
 	// TODO: refactor Utils -> limit connections
