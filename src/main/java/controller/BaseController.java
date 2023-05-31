@@ -11,7 +11,7 @@ import entity.media.Media;
  * @author nguyenlm
  */
 public class BaseController {
-    
+    SessionInformation sessionInformation = SessionInformation.getInstance();
     /**
      * The method checks whether the Media in Cart, if it were in, we will return the CartMedia else return null
      * @param media
@@ -20,7 +20,8 @@ public class BaseController {
 
     // Stamp coupling
     public CartItem checkMediaInCart(Media media){
-        return SessionInformation.getCartInstance().checkMediaInCart(media); /// fix common coupling
+        // Co the dung Singleton DP de tao ra 1 cart instance duy nhat
+        return sessionInformation.getCartInstance().checkMediaInCart(media); /// fix common coupling
     }
 
     /**
@@ -28,6 +29,6 @@ public class BaseController {
      * @return List[CartMedia]
      */
     public List getListCartMedia(){
-        return SessionInformation.getCartInstance().getListMedia();
+        return sessionInformation.getCartInstance().getListMedia();
     }
 }

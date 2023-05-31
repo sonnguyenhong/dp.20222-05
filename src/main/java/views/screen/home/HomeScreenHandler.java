@@ -41,6 +41,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     public static Logger LOGGER = Utils.getLogger(HomeScreenHandler.class.getName());
 
+    SessionInformation sessionInformation = SessionInformation.getInstance();
     @FXML
     private Label numMediaInCart;
 
@@ -145,7 +146,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             btnLogin.setOnMouseClicked(event -> {});
         }
 
-        numMediaInCart.setText(String.valueOf(SessionInformation.getCartInstance().getListMedia().size()) + " media"); /// fix common coupling
+        numMediaInCart.setText(String.valueOf(sessionInformation.getCartInstance().getListMedia().size()) + " media"); /// fix common coupling
         super.show();
     }
 
@@ -220,7 +221,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
         try {
             if (requestQuantity > media.getQuantity()) throw new MediaNotAvailableException();
-            Cart cart = SessionInformation.getCartInstance();/// fix common coupling
+            Cart cart = sessionInformation.getCartInstance();/// fix common coupling
             // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia
             CartItem mediaInCart = getBController().checkMediaInCart(media);
             if (mediaInCart != null) {
