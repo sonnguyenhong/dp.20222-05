@@ -12,7 +12,6 @@ import entity.media.Media;
  */
 public class BaseController {
     SessionInformation sessionInformation = SessionInformation.getInstance();
-
     /**
      * The method checks whether the Media in Cart, if it were in, we will return the CartMedia else return null
      * @param media
