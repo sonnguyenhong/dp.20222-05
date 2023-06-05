@@ -13,7 +13,7 @@ public class SessionInformation {
 
     private SessionInformation() {
         // Private constructor to prevent instantiation from outside
-        cartInstance = new Cart();
+        cartInstance = Cart.getCartInstance();
     }
 
     public static SessionInformation getInstance() {
