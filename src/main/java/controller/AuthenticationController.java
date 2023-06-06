@@ -17,6 +17,7 @@ import java.util.Objects;
  * @author
  */
 public class AuthenticationController extends BaseController {
+	SessionInformation sessionInformation = SessionInformation.getInstance();
 
 	public boolean isAnonymousSession() {
 		try {
@@ -29,12 +30,12 @@ public class AuthenticationController extends BaseController {
 
 	public User getMainUser() throws ExpiredSessionException {
 		/// fix content coupling
-		if (SessionInformation.getMainUser() == null || SessionInformation.getExpiredTime() == null
-				|| SessionInformation.getExpiredTime().isBefore(LocalDateTime.now())) {
+		if (sessionInformation.getMainUser() == null || sessionInformation.getExpiredTime() == null
+				|| sessionInformation.getExpiredTime().isBefore(LocalDateTime.now())) {
 			logout();
 			throw new ExpiredSessionException();
 		} else
-			return SessionInformation.getMainUser().cloneInformation(); /// fix content coupling
+			return sessionInformation.getMainUser().cloneInformation(); /// fix content coupling
 	}
 
 	public void login(String email, String password) throws Exception {
@@ -42,16 +43,16 @@ public class AuthenticationController extends BaseController {
 			User user = new UserDAO().authenticate(email, md5(password));
 			if (Objects.isNull(user))
 				throw new FailLoginException();
-			SessionInformation.setMainUser(user); /// fix content coupling
-			SessionInformation.setExpiredTime(LocalDateTime.now().plusHours(24)); /// fix content coupling
+			sessionInformation.setMainUser(user); /// fix content coupling
+			sessionInformation.setExpiredTime(LocalDateTime.now().plusHours(24)); /// fix content coupling
 		} catch (SQLException ex) {
 			throw new FailLoginException();
 		}
 	}
 
 	public void logout() {
-		SessionInformation.setMainUser(null);/// fix content coupling
-		SessionInformation.setExpiredTime(null);/// fix content coupling
+		sessionInformation.setMainUser(null);/// fix content coupling
+		sessionInformation.setExpiredTime(null);/// fix content coupling
 	}
 
 	/**

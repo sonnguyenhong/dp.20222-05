@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Order {
-
+	SessionInformation sessionInformation = SessionInformation.getInstance();
     private int shippingFees;
     private int subtotal;
     private int tax;
@@ -27,7 +27,7 @@ public class Order {
     public Order(Cart cart) {
         List<OrderItem> orderItems = new ArrayList<>();
       /// fix content coupling
-        for (Object object : SessionInformation.getCartInstance().getListMedia()) {
+        for (Object object : sessionInformation.getCartInstance().getListMedia()) {
             CartItem cartItem = (CartItem) object;
             OrderItem orderItem = new OrderItem(cartItem.getMedia(),
                     cartItem.getQuantity(),

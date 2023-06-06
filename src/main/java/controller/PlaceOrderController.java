@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
  * @author nguyenlm
  */
 public class PlaceOrderController extends BaseController {
+	SessionInformation sessionInformation = SessionInformation.getInstance();
 
     /**
      * Just for logging purpose
@@ -33,7 +34,7 @@ public class PlaceOrderController extends BaseController {
      * @throws SQLException
      */
     public void placeOrder() throws SQLException {
-    	SessionInformation.getCartInstance().checkAvailabilityOfProduct();/// fix content coupling
+    	sessionInformation.getCartInstance().checkAvailabilityOfProduct();/// fix content coupling
     }
 
     /**
@@ -42,7 +43,7 @@ public class PlaceOrderController extends BaseController {
      * @throws SQLException
      */
     public Order createOrder() throws SQLException {
-    	return new Order(SessionInformation.getCartInstance()); /// fix content coupling
+    	return new Order(sessionInformation.getCartInstance()); /// fix content coupling
     }
 
     /**
