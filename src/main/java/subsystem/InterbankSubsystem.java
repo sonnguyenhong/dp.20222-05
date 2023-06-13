@@ -1,5 +1,6 @@
 package subsystem;
 
+import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 import subsystem.interbank.InterbankSubsystemController;
@@ -31,7 +32,7 @@ public class InterbankSubsystem implements InterbankInterface {
 	 * @see InterbankInterface#payOrder(CreditCard, int,
 	 *      String)
 	 */
-	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
+	public PaymentTransaction payOrder(Card card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.payOrder(card, amount, contents);
 		return transaction;
 	}
