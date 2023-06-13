@@ -1,5 +1,6 @@
 package subsystem.interbank;
 
+import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 
@@ -12,7 +13,7 @@ public class InterbankSubsystemController {
 		return null;
 	}
 
-	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
+	public PaymentTransaction payOrder(Card card, int amount, String contents) {
 		String requestPayload = interbankPayloadConverter.convertToRequestPayload(card, amount, contents);
 		String responseText = interbankBoundary.query(InterbankConfigs.PROCESS_TRANSACTION_URL, requestPayload);
 		return interbankPayloadConverter.extractPaymentTransaction(responseText);
