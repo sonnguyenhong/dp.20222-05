@@ -8,10 +8,7 @@ import common.exception.InvalidCardException;
 import common.exception.PaymentException;
 import common.exception.UnrecognizedException;
 import entity.cart.Cart;
-import entity.payment.Card;
-import entity.payment.CreditCard;
-import entity.payment.CreditCardFactory;
-import entity.payment.PaymentTransaction;
+import entity.payment.*;
 import subsystem.InterbankInterface;
 import subsystem.InterbankSubsystem;
 
@@ -34,6 +31,8 @@ public class PaymentController extends BaseController {
 	 * Represent the Interbank subsystem
 	 */
 	private InterbankInterface interbank;
+
+	private CardFactory cardFactory;
 
 	/**
 	 * Validate the input date which should be in the format "mm/yy", and then
@@ -93,8 +92,9 @@ public class PaymentController extends BaseController {
 //					cardHolderName,
 //					getExpirationDate(expirationDate),
 //					Integer.parseInt(securityCode));
-			this.card = new CreditCardFactory(cardNumber, cardHolderName,
-					getExpirationDate(expirationDate), Integer.parseInt(securityCode)).createCard();
+			cardFactory = new CreditCardFactory(cardNumber, cardHolderName,
+					getExpirationDate(expirationDate), Integer.parseInt(securityCode));
+			this.card = cardFactory.performCreateCard();
 			System.out.println(this.card);
 			this.interbank = new InterbankSubsystem();
 			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
