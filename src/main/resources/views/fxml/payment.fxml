@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -29,7 +30,16 @@
       </Label>
       <VBox layoutX="114.0" layoutY="163.0" prefHeight="500.0" prefWidth="500.0">
          <children>
-            <RadioButton disable="true" mnemonicParsing="false" selected="true" text="Credit Card">
+            <fx:define>
+               <ToggleGroup fx:id="radioBtnToggleGroup" />
+            </fx:define>
+
+            <RadioButton disable="false" mnemonicParsing="false" selected="true" text="Credit Card" toggleGroup="$radioBtnToggleGroup">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </RadioButton>
+            <RadioButton disable="false" mnemonicParsing="false" text="Debit Card" toggleGroup="$radioBtnToggleGroup">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
