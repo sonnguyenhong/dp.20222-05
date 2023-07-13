@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * @author
  */
+// Factory Method Design Pattern
 public class MediaDAO {
 
     public List getAllMedia() throws SQLException {

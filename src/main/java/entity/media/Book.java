@@ -10,13 +10,13 @@ import entity.db.AIMSDB;
 
 public class Book extends Media {
 
-    String author;
-    String coverType;
-    String publisher;
-    Date publishDate;
-    int numOfPages;
-    String language;
-    String bookCategory;
+    private String author;
+    private String coverType;
+    private String publisher;
+    private Date publishDate;
+    private int numOfPages;
+    private String language;
+    private String bookCategory;
 
     public Book() throws SQLException{
 
@@ -37,7 +37,7 @@ public class Book extends Media {
 
     // getter and setter
     public int getId() {
-        return this.id;
+        return this.getId();
     }
 
     public String getAuthor() {
@@ -105,24 +105,29 @@ public class Book extends Media {
 
     @Override
     public String toString() {
-        String basicInformation = "{" +
-                " id='" + id + "'" +
-                ", title='" + title + "'" +
-                ", category='" + category + "'" +
-                ", price='" + price + "'" +
-                ", quantity='" + quantity + "'" +
-                ", type='" + type + "'" +
-                ", imageURL='" + imageURL + "'" +
-                "}";
-        return "{" +
-            basicInformation +
-            " author='" + author + "'" +
-            ", coverType='" + coverType + "'" +
-            ", publisher='" + publisher + "'" +
-            ", publishDate='" + publishDate + "'" +
-            ", numOfPages='" + numOfPages + "'" +
-            ", language='" + language + "'" +
-            ", bookCategory='" + bookCategory + "'" +
-            "}";
+        try {
+            String basicInformation = "{" +
+                    " id='" + this.getId() + "'" +
+                    ", title='" + this.getTitle() + "'" +
+                    ", category='" + this.getCategory() + "'" +
+                    ", price='" + this.getPrice() + "'" +
+                    ", quantity='" + this.getQuantity() + "'" +
+                    ", type='" + this.getType() + "'" +
+                    ", imageURL='" + this.getImageURL() + "'" +
+                    "}";
+            return "{" +
+                    basicInformation +
+                    " author='" + author + "'" +
+                    ", coverType='" + coverType + "'" +
+                    ", publisher='" + publisher + "'" +
+                    ", publishDate='" + publishDate + "'" +
+                    ", numOfPages='" + numOfPages + "'" +
+                    ", language='" + language + "'" +
+                    ", bookCategory='" + bookCategory + "'" +
+                    "}";
+        } catch (SQLException ex) {
+            System.out.println("SQL Exception occurred!");
+            return ex.getMessage();
+        }
     }
 }

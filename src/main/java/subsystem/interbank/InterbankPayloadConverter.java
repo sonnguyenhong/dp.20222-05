@@ -1,6 +1,7 @@
 package subsystem.interbank;
 
 import common.exception.*;
+import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 import utils.MyMap;
@@ -14,8 +15,8 @@ import java.util.Map;
  * @author
  */
 
-//Vi pham SRP vi InterbankPayloadConverter lam nhieu hon 1 nhiem vu la convert.
-//Nen tach ra 1 class lam nhiem vu extract information nua
+// Vi pham SRP vi InterbankPayloadConverter lam nhieu hon 1 nhiem vu la convert.
+// Nen tach ra 1 class lam nhiem vu extract information nua
 
 public class InterbankPayloadConverter {
 
@@ -26,7 +27,7 @@ public class InterbankPayloadConverter {
      * @param contents
      * @return
      */
-    String convertToRequestPayload(CreditCard card, int amount, String contents) {
+    String convertToRequestPayload(Card card, int amount, String contents) {
         Map<String, Object> transaction = new MyMap();
 
         try {
@@ -72,8 +73,7 @@ public class InterbankPayloadConverter {
                 Integer.parseInt((String) transaction.get("amount")),
                 (String) transaction.get("createdAt"));
 
-                /// Vi phạm OCP: Khi thêm mới 1 ErrorCode thì lại phải thêm 1 trường hợp
-
+        /// Vi phạm OCP: Khi thêm mới 1 ErrorCode thì lại phải thêm 1 trường hợp
         switch (trans.getErrorCode()) {
             case "00":
                 break;

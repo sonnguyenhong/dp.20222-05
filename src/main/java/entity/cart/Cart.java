@@ -8,9 +8,10 @@ import common.exception.MediaNotAvailableException;
 import controller.SessionInformation;
 import entity.media.Media;
 
+// Add singleton
 public class Cart {
 	public static Cart instance;
-    
+
     private List<CartItem> lstCartItem;
 
     private Cart() {
@@ -27,7 +28,6 @@ public class Cart {
         }
         return instance;
     }
-
 
     public void addCartMedia(CartItem cm){
         lstCartItem.add(cm);

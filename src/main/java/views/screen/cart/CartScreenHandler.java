@@ -177,4 +177,76 @@ public class CartScreenHandler extends BaseScreenHandler {
 			e.printStackTrace();
 		}
 	}
+
+	public static Logger getLOGGER() {
+		return LOGGER;
+	}
+
+	public static void setLOGGER(Logger LOGGER) {
+		CartScreenHandler.LOGGER = LOGGER;
+	}
+
+	public ImageView getAimsImage() {
+		return aimsImage;
+	}
+
+	public void setAimsImage(ImageView aimsImage) {
+		this.aimsImage = aimsImage;
+	}
+
+	public Label getPageTitle() {
+		return pageTitle;
+	}
+
+	public void setPageTitle(Label pageTitle) {
+		this.pageTitle = pageTitle;
+	}
+
+	public VBox getVboxCart() {
+		return vboxCart;
+	}
+
+	public void setVboxCart(VBox vboxCart) {
+		this.vboxCart = vboxCart;
+	}
+
+	public Label getShippingFees() {
+		return shippingFees;
+	}
+
+	public void setShippingFees(Label shippingFees) {
+		this.shippingFees = shippingFees;
+	}
+
+	public Label getLabelAmount() {
+		return labelAmount;
+	}
+
+	public void setLabelAmount(Label labelAmount) {
+		this.labelAmount = labelAmount;
+	}
+
+	public Label getLabelSubtotal() {
+		return labelSubtotal;
+	}
+
+	public void setLabelSubtotal(Label labelSubtotal) {
+		this.labelSubtotal = labelSubtotal;
+	}
+
+	public Label getLabelVAT() {
+		return labelVAT;
+	}
+
+	public void setLabelVAT(Label labelVAT) {
+		this.labelVAT = labelVAT;
+	}
+
+	public Button getBtnPlaceOrder() {
+		return btnPlaceOrder;
+	}
+
+	public void setBtnPlaceOrder(Button btnPlaceOrder) {
+		this.btnPlaceOrder = btnPlaceOrder;
+	}
 }

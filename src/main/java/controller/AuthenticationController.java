@@ -17,7 +17,7 @@ import java.util.Objects;
  * @author
  */
 public class AuthenticationController extends BaseController {
-	SessionInformation sessionInformation = SessionInformation.getInstance();
+    SessionInformation sessionInformation = SessionInformation.getInstance();
 
 	public boolean isAnonymousSession() {
 		try {
@@ -28,31 +28,27 @@ public class AuthenticationController extends BaseController {
 		}
 	}
 
-	public User getMainUser() throws ExpiredSessionException {
-		/// fix content coupling
-		if (sessionInformation.getMainUser() == null || sessionInformation.getExpiredTime() == null
-				|| sessionInformation.getExpiredTime().isBefore(LocalDateTime.now())) {
-			logout();
-			throw new ExpiredSessionException();
-		} else
-			return sessionInformation.getMainUser().cloneInformation(); /// fix content coupling
-	}
+    public User getMainUser() throws ExpiredSessionException {
+        if (sessionInformation.getMainUser() == null || sessionInformation.getExpiredTime() == null || sessionInformation.getExpiredTime().isBefore(LocalDateTime.now())) {
+            logout();
+            throw new ExpiredSessionException();
+        } else return sessionInformation.getMainUser().cloneInformation(); /// fix common coupling
+    }
 
-	public void login(String email, String password) throws Exception {
-		try {
+    public void login(String email, String password) throws Exception {
+        try {
 			User user = new UserDAO().authenticate(email, md5(password));
-			if (Objects.isNull(user))
-				throw new FailLoginException();
-			sessionInformation.setMainUser(user); /// fix content coupling
-			sessionInformation.setExpiredTime(LocalDateTime.now().plusHours(24)); /// fix content coupling
+			if (Objects.isNull(user)) throw new FailLoginException();
+			sessionInformation.setMainUser(user); /// fix common coupling
+			sessionInformation.setExpiredTime(LocalDateTime.now().plusHours(24)); /// fix common coupling
 		} catch (SQLException ex) {
 			throw new FailLoginException();
 		}
 	}
 
 	public void logout() {
-		sessionInformation.setMainUser(null);/// fix content coupling
-		sessionInformation.setExpiredTime(null);/// fix content coupling
+		sessionInformation.setMainUser(null);/// fix common coupling
+		sessionInformation.setExpiredTime(null);/// fix common coupling
 	}
 
 	/**

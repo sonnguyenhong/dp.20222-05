@@ -16,8 +16,10 @@ import views.screen.popup.PopupScreen;
 import java.io.IOException;
 import java.util.Map;
 import java.util.logging.Logger;
-//Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
-//2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
+
+// Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
+// 2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
+
 public class PaymentScreenHandler extends BaseScreenHandler {
 
 	private static final Logger LOGGER = Utils.getLogger(PaymentScreenHandler.class.getName());
@@ -85,5 +87,69 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 		resultScreen.setHomeScreenHandler(homeScreenHandler);
 		resultScreen.setScreenTitle("Result Screen");
 		resultScreen.show();
+	}
+
+	public Button getBtnConfirmPayment() {
+		return btnConfirmPayment;
+	}
+
+	public void setBtnConfirmPayment(Button btnConfirmPayment) {
+		this.btnConfirmPayment = btnConfirmPayment;
+	}
+
+	public ImageView getLoadingImage() {
+		return loadingImage;
+	}
+
+	public void setLoadingImage(ImageView loadingImage) {
+		this.loadingImage = loadingImage;
+	}
+
+	public Invoice getInvoice() {
+		return invoice;
+	}
+
+	public void setInvoice(Invoice invoice) {
+		this.invoice = invoice;
+	}
+
+	public Label getPageTitle() {
+		return pageTitle;
+	}
+
+	public void setPageTitle(Label pageTitle) {
+		this.pageTitle = pageTitle;
+	}
+
+	public TextField getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(TextField cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public TextField getHolderName() {
+		return holderName;
+	}
+
+	public void setHolderName(TextField holderName) {
+		this.holderName = holderName;
+	}
+
+	public TextField getExpirationDate() {
+		return expirationDate;
+	}
+
+	public void setExpirationDate(TextField expirationDate) {
+		this.expirationDate = expirationDate;
+	}
+
+	public TextField getSecurityCode() {
+		return securityCode;
+	}
+
+	public void setSecurityCode(TextField securityCode) {
+		this.securityCode = securityCode;
 	}
 }

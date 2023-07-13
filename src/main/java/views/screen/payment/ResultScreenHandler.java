@@ -15,8 +15,10 @@ import javafx.stage.Stage;
 import utils.Utils;
 import views.screen.BaseScreenHandler;
 import views.screen.popup.PopupScreen;
-//Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
-//2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
+
+// Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
+// 2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
+
 public class ResultScreenHandler extends BaseScreenHandler {
 
 	private static final Logger LOGGER = Utils.getLogger(PaymentScreenHandler.class.getName());
@@ -64,5 +66,53 @@ public class ResultScreenHandler extends BaseScreenHandler {
 	@FXML
 	void confirmPayment(MouseEvent event) throws IOException {
 		homeScreenHandler.show();
+	}
+
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Label getPageTitle() {
+		return pageTitle;
+	}
+
+	public void setPageTitle(Label pageTitle) {
+		this.pageTitle = pageTitle;
+	}
+
+	public Label getResultLabel() {
+		return resultLabel;
+	}
+
+	public void setResultLabel(Label resultLabel) {
+		this.resultLabel = resultLabel;
+	}
+
+	public Button getOkButton() {
+		return okButton;
+	}
+
+	public void setOkButton(Button okButton) {
+		this.okButton = okButton;
+	}
+
+	public Label getMessageLabel() {
+		return messageLabel;
+	}
+
+	public void setMessageLabel(Label messageLabel) {
+		this.messageLabel = messageLabel;
 	}
 }

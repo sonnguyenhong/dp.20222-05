@@ -17,8 +17,6 @@ import views.screen.popup.PopupScreen;
 public abstract class BaseScreenHandler extends FXMLScreenHandler {
 
 	private static final Logger LOGGER = Utils.getLogger(BaseScreenHandler.class.getName());
-
-
 	private Scene scene;
 	private BaseScreenHandler prev;
 	protected final Stage stage;
@@ -41,7 +39,7 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 
 	public void show() {
 		if (this.scene == null) {
-			this.scene = new Scene(this.content);
+			this.scene = new Scene(this.getContent());
 		}
 		this.stage.setScene(this.scene);
 		this.stage.show();
@@ -67,4 +65,43 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 		this.homeScreenHandler = HomeScreenHandler;
 	}
 
+	public Scene getScene() {
+		return scene;
+	}
+
+	public void setScene(Scene scene) {
+		this.scene = scene;
+	}
+
+	public BaseScreenHandler getPrev() {
+		return prev;
+	}
+
+	public void setPrev(BaseScreenHandler prev) {
+		this.prev = prev;
+	}
+
+	public Stage getStage() {
+		return stage;
+	}
+
+	public HomeScreenHandler getHomeScreenHandler() {
+		return homeScreenHandler;
+	}
+
+	public Hashtable<String, String> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(Hashtable<String, String> messages) {
+		this.messages = messages;
+	}
+
+	public BaseController getbController() {
+		return bController;
+	}
+
+	public void setbController(BaseController bController) {
+		this.bController = bController;
+	}
 }

@@ -34,7 +34,7 @@ public class PlaceOrderController extends BaseController {
      * @throws SQLException
      */
     public void placeOrder() throws SQLException {
-    	sessionInformation.getCartInstance().checkAvailabilityOfProduct();/// fix content coupling
+        sessionInformation.getCartInstance().checkAvailabilityOfProduct();/// fix common coupling
     }
 
     /**
@@ -43,7 +43,7 @@ public class PlaceOrderController extends BaseController {
      * @throws SQLException
      */
     public Order createOrder() throws SQLException {
-    	return new Order(sessionInformation.getCartInstance()); /// fix content coupling
+        return new Order(sessionInformation.getCartInstance()); /// fix common coupling
     }
 
     /**
@@ -51,7 +51,8 @@ public class PlaceOrderController extends BaseController {
      * @param order
      * @return Invoice
      */
- // Stamp coupling
+
+    // Stamp coupling
     public Invoice createInvoice(Order order) {
         return new Invoice(order);
     }

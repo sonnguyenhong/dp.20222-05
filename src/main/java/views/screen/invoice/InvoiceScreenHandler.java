@@ -20,8 +20,10 @@ import views.screen.popup.PopupScreen;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Logger;
-//Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
-//2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
+
+// Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
+// 2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
+
 public class InvoiceScreenHandler extends BaseScreenHandler {
 
 	private static Logger LOGGER = Utils.getLogger(InvoiceScreenHandler.class.getName());
@@ -112,5 +114,101 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 		paymentScreen.setScreenTitle("Payment Screen");
 		paymentScreen.show();
 		LOGGER.info("Confirmed invoice");
+	}
+
+	public static Logger getLOGGER() {
+		return LOGGER;
+	}
+
+	public static void setLOGGER(Logger LOGGER) {
+		InvoiceScreenHandler.LOGGER = LOGGER;
+	}
+
+	public Label getPageTitle() {
+		return pageTitle;
+	}
+
+	public void setPageTitle(Label pageTitle) {
+		this.pageTitle = pageTitle;
+	}
+
+	public Label getName() {
+		return name;
+	}
+
+	public void setName(Label name) {
+		this.name = name;
+	}
+
+	public Label getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Label phone) {
+		this.phone = phone;
+	}
+
+	public Label getProvince() {
+		return province;
+	}
+
+	public void setProvince(Label province) {
+		this.province = province;
+	}
+
+	public Label getAddress() {
+		return address;
+	}
+
+	public void setAddress(Label address) {
+		this.address = address;
+	}
+
+	public Label getInstructions() {
+		return instructions;
+	}
+
+	public void setInstructions(Label instructions) {
+		this.instructions = instructions;
+	}
+
+	public Label getSubtotal() {
+		return subtotal;
+	}
+
+	public void setSubtotal(Label subtotal) {
+		this.subtotal = subtotal;
+	}
+
+	public Label getShippingFees() {
+		return shippingFees;
+	}
+
+	public void setShippingFees(Label shippingFees) {
+		this.shippingFees = shippingFees;
+	}
+
+	public Label getTotal() {
+		return total;
+	}
+
+	public void setTotal(Label total) {
+		this.total = total;
+	}
+
+	public VBox getVboxItems() {
+		return vboxItems;
+	}
+
+	public void setVboxItems(VBox vboxItems) {
+		this.vboxItems = vboxItems;
+	}
+
+	public Invoice getInvoice() {
+		return invoice;
+	}
+
+	public void setInvoice(Invoice invoice) {
+		this.invoice = invoice;
 	}
 }

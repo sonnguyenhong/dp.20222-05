@@ -59,4 +59,71 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
 		image.setFitWidth(83);
     }
 
+    public HBox getHboxMedia() {
+        return hboxMedia;
+    }
+
+    public void setHboxMedia(HBox hboxMedia) {
+        this.hboxMedia = hboxMedia;
+    }
+
+    public VBox getImageLogoVbox() {
+        return imageLogoVbox;
+    }
+
+    public void setImageLogoVbox(VBox imageLogoVbox) {
+        this.imageLogoVbox = imageLogoVbox;
+    }
+
+    public ImageView getImage() {
+        return image;
+    }
+
+    public void setImage(ImageView image) {
+        this.image = image;
+    }
+
+    public VBox getDescription() {
+        return description;
+    }
+
+    public void setDescription(VBox description) {
+        this.description = description;
+    }
+
+    public Label getTitle() {
+        return title;
+    }
+
+    public void setTitle(Label title) {
+        this.title = title;
+    }
+
+    public Label getNumOfProd() {
+        return numOfProd;
+    }
+
+    public void setNumOfProd(Label numOfProd) {
+        this.numOfProd = numOfProd;
+    }
+
+    public Label getLabelOutOfStock() {
+        return labelOutOfStock;
+    }
+
+    public void setLabelOutOfStock(Label labelOutOfStock) {
+        this.labelOutOfStock = labelOutOfStock;
+    }
+
+    public Label getPrice() {
+        return price;
+    }
+
+    public void setPrice(Label price) {
+        this.price = price;
+    }
+
+    public OrderItem getOrderItem() {
+        return orderItem;
+    }
 }

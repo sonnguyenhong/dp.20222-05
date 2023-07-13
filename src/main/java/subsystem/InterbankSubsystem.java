@@ -1,5 +1,6 @@
 package subsystem;
 
+import entity.payment.Card;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 import subsystem.interbank.InterbankSubsystemController;
@@ -11,6 +12,7 @@ import subsystem.interbank.InterbankSubsystemController;
  * @author hieud
  *
  */
+/// Vi phạm nguyên tắc  DIP: vì lớp InterbankSubsystem phụ thuộc trực tiếp vào InterbankSubsystemControllẻ
 public class InterbankSubsystem implements InterbankInterface {
 
 	/**
@@ -30,7 +32,7 @@ public class InterbankSubsystem implements InterbankInterface {
 	 * @see InterbankInterface#payOrder(CreditCard, int,
 	 *      String)
 	 */
-	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
+	public PaymentTransaction payOrder(Card card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.payOrder(card, amount, contents);
 		return transaction;
 	}
@@ -42,5 +44,13 @@ public class InterbankSubsystem implements InterbankInterface {
 	public PaymentTransaction refund(CreditCard card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.refund(card, amount, contents);
 		return transaction;
+	}
+
+	public InterbankSubsystemController getCtrl() {
+		return ctrl;
+	}
+
+	public void setCtrl(InterbankSubsystemController ctrl) {
+		this.ctrl = ctrl;
 	}
 }
