@@ -23,7 +23,6 @@ import java.util.logging.Logger;
 
 // Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
 // 2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
-
 public class InvoiceScreenHandler extends BaseScreenHandler {
 
 	private static Logger LOGGER = Utils.getLogger(InvoiceScreenHandler.class.getName());
@@ -108,7 +107,7 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 	@FXML
 	void confirmInvoice(MouseEvent event) throws IOException {
 		BaseScreenHandler paymentScreen = new PaymentScreenHandler(this.stage, ViewsConfig.PAYMENT_SCREEN_PATH, invoice);
-		paymentScreen.setBController(new PaymentController());
+//		paymentScreen.setBController(new PaymentController());
 		paymentScreen.setPreviousScreen(this);
 		paymentScreen.setHomeScreenHandler(homeScreenHandler);
 		paymentScreen.setScreenTitle("Payment Screen");

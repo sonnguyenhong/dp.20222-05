@@ -10,14 +10,14 @@ import entity.media.Media;
 
 // Add singleton
 public class Cart {
-	public static Cart instance;
+    public static Cart instance;
 
     private List<CartItem> lstCartItem;
 
     private Cart() {
         lstCartItem = new ArrayList<>();
     }
-    
+
     public static Cart getCartInstance() {
         if(instance == null) {
             synchronized (Cart.class) {

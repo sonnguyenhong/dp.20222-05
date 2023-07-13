@@ -6,11 +6,11 @@ import entity.user.User;
 import java.time.LocalDateTime;
 
 public class SessionInformation {
-	private static SessionInformation instance;
+    private static SessionInformation instance;
     private User mainUser;
     private Cart cartInstance;
     private LocalDateTime expiredTime;
-    
+
     private SessionInformation() {
         // Private constructor to prevent instantiation from outside
         cartInstance = Cart.getCartInstance();

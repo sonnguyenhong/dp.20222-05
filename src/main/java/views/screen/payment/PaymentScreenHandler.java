@@ -1,11 +1,11 @@
 package views.screen.payment;
 
+import controller.CreditCardPaymentController;
+import controller.DebitCardPaymentController;
 import controller.PaymentController;
 import entity.invoice.Invoice;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import utils.Utils;
@@ -19,13 +19,15 @@ import java.util.logging.Logger;
 
 // Temporal Cohension (Thuc hien cac phuong thuc setupData va setupFunctionality o trong phuong thuc khoi tao)
 // 2 phuong thuc lien quan den nhau trong luc khoi chay (related when they are executed)
-
 public class PaymentScreenHandler extends BaseScreenHandler {
 
 	private static final Logger LOGGER = Utils.getLogger(PaymentScreenHandler.class.getName());
 
 	@FXML
 	private Button btnConfirmPayment;
+
+	@FXML
+	private ToggleGroup radioBtnToggleGroup;
 
 	@FXML
 	private ImageView loadingImage;
@@ -78,7 +80,20 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 
 	void confirmToPayOrder() throws IOException{
 		String contents = "pay order";
-		PaymentController ctrl = (PaymentController) getBController();
+
+		RadioButton selectedRadioBtn = (RadioButton) radioBtnToggleGroup.getSelectedToggle();
+		System.out.println(selectedRadioBtn.getText().toString().equals("Credit Card"));
+		PaymentController ctrl;
+		if(selectedRadioBtn.getText().toString().equals("Credit Card")) {
+			System.out.println("Credit card selected");
+			ctrl = new CreditCardPaymentController();
+		} else if(selectedRadioBtn.getText().toString().equals("Debit Card")) {
+			System.out.println("Debit card selected");
+			ctrl = new DebitCardPaymentController();
+		} else {
+			throw new IOException("Payment method not defined");
+		}
+
 		Map<String, String> response = ctrl.payOrder(invoice.getAmount(), contents, cardNumber.getText(), holderName.getText(),
 				expirationDate.getText(), securityCode.getText());
 
