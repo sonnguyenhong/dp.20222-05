@@ -13,6 +13,9 @@ import java.util.Date;
  */
 public class DVDDAO extends MediaDAO {
 
+    //LSP
+    //Ở lớp cha khi không tìm được data trong CSDL sẽ trả về null,
+    //còn ở đây ném ra lỗi
     @Override
     public Media getMediaById(int id) throws SQLException {
         String sql = "SELECT * FROM "+

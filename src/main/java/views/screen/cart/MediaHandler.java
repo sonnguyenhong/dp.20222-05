@@ -25,7 +25,9 @@ import utils.Utils;
 import views.screen.FXMLScreenHandler;
 import views.screen.ViewsConfig;
 
+//Procedural Cohension (Cac phuong thuc thuc hien theo thu thu: SetCartItem => SetMediaInfo => Initailize Spinner)
 public class MediaHandler extends FXMLScreenHandler {
+	SessionInformation sessionInformation = SessionInformation.getInstance();
 
 	private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
 
@@ -85,7 +87,8 @@ public class MediaHandler extends FXMLScreenHandler {
 		btnDelete.setFont(ViewsConfig.REGULAR_FONT);
 		btnDelete.setOnMouseClicked(e -> {
 			try {
-				SessionInformation.cartInstance.removeCartMedia(cartItem); // update user cart
+				/// fix content coupling
+				sessionInformation.getCartInstance().removeCartMedia(cartItem); // update user cart
 				cartScreen.updateCart(); // re-display user cart
 				LOGGER.info("Deleted " + cartItem.getMedia().getTitle() + " from the cart");
 			} catch (SQLException exp) {

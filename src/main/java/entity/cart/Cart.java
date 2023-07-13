@@ -5,15 +5,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import common.exception.MediaNotAvailableException;
+import controller.SessionInformation;
 import entity.media.Media;
 
 public class Cart {
+	public static Cart instance;
     
     private List<CartItem> lstCartItem;
 
-    public Cart() {
+    private Cart() {
         lstCartItem = new ArrayList<>();
     }
+    
+    public static Cart getCartInstance() {
+        if(instance == null) {
+            synchronized (Cart.class) {
+                if (instance == null) {
+                    instance = new Cart();
+                }
+            }
+        }
+        return instance;
+    }
+
 
     public void addCartMedia(CartItem cm){
         lstCartItem.add(cm);

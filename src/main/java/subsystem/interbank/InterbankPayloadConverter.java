@@ -13,6 +13,10 @@ import java.util.Map;
 /**
  * @author
  */
+
+//Vi pham SRP vi InterbankPayloadConverter lam nhieu hon 1 nhiem vu la convert.
+//Nen tach ra 1 class lam nhiem vu extract information nua
+
 public class InterbankPayloadConverter {
 
     /**
@@ -67,6 +71,8 @@ public class InterbankPayloadConverter {
                 (String) transaction.get("transactionContent"),
                 Integer.parseInt((String) transaction.get("amount")),
                 (String) transaction.get("createdAt"));
+
+                /// Vi phạm OCP: Khi thêm mới 1 ErrorCode thì lại phải thêm 1 trường hợp
 
         switch (trans.getErrorCode()) {
             case "00":
