@@ -14,26 +14,26 @@ import utils.Utils;
 import views.screen.home.HomeScreenHandler;
 import views.screen.popup.PopupScreen;
 
-public abstract class BaseScreenHandler extends FXMLScreenHandler {
+public abstract class dler extends FXMLScreenHandler {
 
-	private static final Logger LOGGER = Utils.getLogger(BaseScreenHandler.class.getName());
+	private static final Logger LOGGER = Utils.getLogger(dler.class.getName());
 	private Scene scene;
-	private BaseScreenHandler prev;
+	private dler prev;
 	protected final Stage stage;
 	protected HomeScreenHandler homeScreenHandler;
 	protected Hashtable<String, String> messages;
 	private BaseController bController;
 
-	protected BaseScreenHandler(Stage stage, String screenPath) throws IOException {
+	protected dler(Stage stage, String screenPath) throws IOException {
 		super(screenPath);
 		this.stage = stage;
 	}
 
-	public void setPreviousScreen(BaseScreenHandler prev) {
+	public void setPreviousScreen(dler prev) {
 		this.prev = prev;
 	}
 
-	public BaseScreenHandler getPreviousScreen() {
+	public dler getPreviousScreen() {
 		return this.prev;
 	}
 
@@ -73,11 +73,11 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 		this.scene = scene;
 	}
 
-	public BaseScreenHandler getPrev() {
+	public dler getPrev() {
 		return prev;
 	}
 
-	public void setPrev(BaseScreenHandler prev) {
+	public void setPrev(dler prev) {
 		this.prev = prev;
 	}
 

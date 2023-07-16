@@ -58,13 +58,14 @@ public class CartScreenHandler extends BaseScreenHandler {
 		try {
 			setupFunctionality();
 		} catch (IOException ex) {
-			LOGGER.info(ex.getMessage());
-			PopupScreen.error("Error when loading resources.");
+			handleIOException(ex);
 		} catch (Exception ex) {
 			LOGGER.info(ex.getMessage());
 			PopupScreen.error(ex.getMessage());
 		}
 	}
+
+	
 
 	protected void setupFunctionality() throws Exception {
 		// fix relative image path caused by fxml
