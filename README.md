@@ -23,7 +23,7 @@
     - Cài đặt: Cải tiến Payment Controller khi có phương thức thanh toán mới
 3. Thân Minh Nam
     - Tìm kiếm: Các vi phạm Coupling, Cohension, SOLID, các Design Pattern đã có trong codebase
-    - Cài đặt:
+    - Cài đặt: Cải tiến Caculator shipping fee khi có phương thức tính phí ship mới
 4. Hồ Hải Nam
     - Tìm kiếm: Các vi phạm Coupling, Cohension, SOLID, các Design Pattern đã có trong codebase
     - Cài đặt:
