@@ -20,7 +20,7 @@
    - Hoàn thiện báo cáo.
 2. Lê Hồng Ưng
     - Tìm kiếm: Các vi phạm Coupling, Cohension, SOLID, các Design Pattern đã có trong codebase
-    - Cài đặt:
+    - Cài đặt: Cải tiến Payment Controller khi có phương thức thanh toán mới
 3. Thân Minh Nam
     - Tìm kiếm: Các vi phạm Coupling, Cohension, SOLID, các Design Pattern đã có trong codebase
     - Cài đặt:
