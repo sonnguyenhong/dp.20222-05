@@ -76,6 +76,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
     public HomeScreenHandler(Stage stage, String screenPath) throws IOException{
         super(stage, screenPath);
         try {
+            setupData(null);
 			setupFunctionality();
 		} catch (IOException ex) {
 			handleIOException(ex);
