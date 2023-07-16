@@ -27,15 +27,13 @@ public class IntroScreenHandler extends BaseScreenHandler {
         super(stage, screenPath);
 
         try {
-            setupData(null);
-            setupFunctionality();
-        } catch (IOException ex) {
-            LOGGER.info(ex.getMessage());
-            PopupScreen.error("Error when loading resources.");
-        } catch (Exception ex) {
-            LOGGER.info(ex.getMessage());
-            PopupScreen.error(ex.getMessage());
-        }
+			setupFunctionality();
+		} catch (IOException ex) {
+			handleIOException(ex);
+		} catch (Exception ex) {
+			LOGGER.info(ex.getMessage());
+			PopupScreen.error(ex.getMessage());
+		}
     }
 
 
