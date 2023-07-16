@@ -1,3 +1,2 @@
 package entity.payment;
-public interface Card {
-}
+public abstract  class Card{}
