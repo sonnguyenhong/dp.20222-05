@@ -3,12 +3,12 @@ package entity.payment;
 /**
  * @author
  */
-public class CreditCard implements Card {
+public class CreditCard extends Card {
 
     private String cardCode;
     private String owner;
     private String dateExpired;
-    private int cvvCode;
+    protected int cvvCode;
 
     public CreditCard(String cardCode, String owner, String dateExpired, int cvvCode) {
         this.cardCode = cardCode;
@@ -48,4 +48,5 @@ public class CreditCard implements Card {
     public void setCvvCode(int cvvCode) {
         this.cvvCode = cvvCode;
     }
+
 }

@@ -34,12 +34,12 @@
                <ToggleGroup fx:id="radioBtnToggleGroup" />
             </fx:define>
 
-            <RadioButton disable="false" mnemonicParsing="false" selected="true" text="Credit Card" toggleGroup="$radioBtnToggleGroup">
+            <RadioButton disable="false" mnemonicParsing="false" selected="true" text="Domestic Card" toggleGroup="$radioBtnToggleGroup" id = "domesticCardRadioBtn">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
             </RadioButton>
-            <RadioButton disable="false" mnemonicParsing="false" text="Debit Card" toggleGroup="$radioBtnToggleGroup">
+            <RadioButton disable="false" mnemonicParsing="false" text="Credit Card" toggleGroup="$radioBtnToggleGroup" id="creditCardRadioBtn">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
@@ -78,12 +78,22 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </TextField>
-            <Label text="Card security code:">
+            <Label text="Card security code:" fx:id ="securityLabel">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
             </Label>
             <TextField fx:id="securityCode" text="185">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </TextField>
+            <Label text="Issuing bank:" fx:id ="issuingBankLabel">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="issuingBank" text="185">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>

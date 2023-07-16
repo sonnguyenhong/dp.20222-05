@@ -7,10 +7,8 @@ import java.util.Map;
 import common.exception.InvalidCardException;
 import common.exception.PaymentException;
 import common.exception.UnrecognizedException;
-import entity.cart.Cart;
 import entity.payment.Card;
 import entity.payment.CreditCard;
-import entity.payment.CreditCardFactory;
 import entity.payment.PaymentTransaction;
 import subsystem.InterbankInterface;
 import subsystem.InterbankSubsystem;
@@ -23,7 +21,7 @@ import subsystem.InterbankSubsystem;
  * @author hieud
  *
  */
-public abstract class PaymentController extends BaseController {
+public class PaymentController extends BaseController {
 	SessionInformation sessionInformation = SessionInformation.getInstance();
 	/**
 	 * Represent the card used for payment
@@ -83,29 +81,20 @@ public abstract class PaymentController extends BaseController {
 	 * @return {@link Map Map} represent the payment result with a
 	 *         message.
 	 */
-	public abstract Map<String, String> payOrder(int amount, String contents, String cardNumber, String cardHolderName,
-			String expirationDate, String securityCode);
-//		Map<String, String> result = new Hashtable<String, String>();
-//		result.put("RESULT", "PAYMENT FAILED!");
-//		try {
-////			this.card = new CreditCard(
-////					cardNumber,
-////					cardHolderName,
-////					getExpirationDate(expirationDate),
-////					Integer.parseInt(securityCode));
-//			this.card = new CreditCardFactory(cardNumber, cardHolderName,
-//					getExpirationDate(expirationDate), Integer.parseInt(securityCode)).createCard();
-//			System.out.println(this.card);
-//			this.interbank = new InterbankSubsystem();
-//			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
-//
-//			result.put("RESULT", "PAYMENT SUCCESSFUL!");
-//			result.put("MESSAGE", "You have successfully paid the order!");
-//		} catch (PaymentException | UnrecognizedException ex) {
-//			result.put("MESSAGE", ex.getMessage());
-//		}
-//		return result;
+	public Map<String, String> payOrder(int amount, String contents, Card card) {
+		Map<String, String> result = new Hashtable<String, String>();
+		result.put("RESULT", "PAYMENT FAILED!");
+		try {
+			this.interbank = new InterbankSubsystem();
+			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
 
+			result.put("RESULT", "PAYMENT SUCCESSFUL!");
+			result.put("MESSAGE", "You have successfully paid the order!");
+		} catch (PaymentException | UnrecognizedException ex) {
+			result.put("MESSAGE", ex.getMessage());
+		}
+		return result;
+	}
 
 	public Card getCard() {
 		return this.card;
