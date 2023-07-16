@@ -14,26 +14,26 @@ import utils.Utils;
 import views.screen.home.HomeScreenHandler;
 import views.screen.popup.PopupScreen;
 
-public abstract class dler extends FXMLScreenHandler {
+public abstract class BaseScreenHandler extends FXMLScreenHandler {
 
-	private static final Logger LOGGER = Utils.getLogger(dler.class.getName());
+	private static final Logger LOGGER = Utils.getLogger(BaseScreenHandler.class.getName());
 	private Scene scene;
-	private dler prev;
+	private BaseScreenHandler prev;
 	protected final Stage stage;
 	protected HomeScreenHandler homeScreenHandler;
 	protected Hashtable<String, String> messages;
 	private BaseController bController;
 
-	protected dler(Stage stage, String screenPath) throws IOException {
+	protected BaseScreenHandler(Stage stage, String screenPath) throws IOException {
 		super(screenPath);
 		this.stage = stage;
 	}
 
-	public void setPreviousScreen(dler prev) {
+	public void setPreviousScreen(BaseScreenHandler prev) {
 		this.prev = prev;
 	}
 
-	public dler getPreviousScreen() {
+	public BaseScreenHandler getPreviousScreen() {
 		return this.prev;
 	}
 
@@ -73,11 +73,11 @@ public abstract class dler extends FXMLScreenHandler {
 		this.scene = scene;
 	}
 
-	public dler getPrev() {
+	public BaseScreenHandler getPrev() {
 		return prev;
 	}
 
-	public void setPrev(dler prev) {
+	public void setPrev(BaseScreenHandler prev) {
 		this.prev = prev;
 	}
 
@@ -103,5 +103,14 @@ public abstract class dler extends FXMLScreenHandler {
 
 	public void setbController(BaseController bController) {
 		this.bController = bController;
+	}
+
+	protected void handleIOException(IOException ioException) {
+		try {
+			System.out.println(ioException.getMessage());
+			PopupScreen.error("Error when loading resources.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
