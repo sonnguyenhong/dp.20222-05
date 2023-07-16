@@ -18,6 +18,7 @@
      - Cài đặt Singleton DP cho lớp Cart
      - Cài đặt Factory Method DP cho các lớp Media
    - Hoàn thiện báo cáo.
+   - Hỗ trợ nhóm sửa lỗi khi chỉnh sửa mã nguồn
 2. Lê Hồng Ưng
     - Tìm kiếm: Các vi phạm Coupling, Cohension, SOLID, các Design Pattern đã có trong codebase
     - Cài đặt:
