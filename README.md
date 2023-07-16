@@ -3,44 +3,34 @@
   <img src="src/main/resources/assets/images/aims_cover_image.png" />
 </p>
 
-## Getting Started
+## Member Information - Group 5
 
-Welcome to the AIMS project. Here is a guideline to help you get started.
+1. Nguyễn Hồng Sơn - 20194156
+2. Lê Hồng Ưng - 20194211
+3. Thân Minh Nam - 20194128
+4. Hồ Hải Nam - 20194123
 
-## Folder Structure
+## Assignment
+1. Nguyễn Hồng Sơn
+    - Tìm kiếm: Các vi phạm Coupling, Cohension, SOLID, các Design Pattern đã có trong codebase
+    - Cài đặt:
+        - Cài đặt Strategy DP cho từng phương thức thanh toán tại Controller
+        - Cài đặt Singleton DP cho lớp Cart
+        - Cài đặt Factory Method DP cho các lớp Media
+    - Hoàn thiện báo cáo.
+    - Hỗ trợ nhóm sửa lỗi khi chỉnh sửa mã nguồn
+2. Lê Hồng Ưng
+    - Tìm kiếm: Các vi phạm Coupling, Cohension, SOLID, các Design Pattern đã có trong codebase
+    - Cài đặt:
+        - Cài đặt thư viện cho project
+        - Cải tiến Payment Controller khi có phương thức thanh toán mới
+3. Thân Minh Nam
+    - Tìm kiếm: Các vi phạm Coupling, Cohension, SOLID, các Design Pattern đã có trong codebase
+    - Cài đặt: Cải tiến Caculator shipping fee khi có phương thức tính phí ship mới
+4. Hồ Hải Nam
+    - Tìm kiếm: Các vi phạm Coupling, Cohension, SOLID, các Design Pattern đã có trong codebase
+    - Cài đặt: Cải tiến ScreenHandle để khắc phục vấn đề khi chúng ta muốn thay đổi yêu cầu khi load giao diện,
+      thay đổi cách xử lý khi xảy ra lỗi IOException. Cải tiến DeliveryInfo khi thay đổi thư viện tính khoảng cách
 
-The workspace contains the following folders, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-- `test`: the folder for testing purpose
-
-## Dependency Management
-### Working with Eclipse
-Import the root directory of this repository after cloning under `Eclipse` -> `Open Projects from File System...` or by using EGit.
-
-### SQLite
-Import `sqlite-jdbc-3.7.2.jar` in `lib` under `Eclipse` -> `Project` -> `Properties` -> `Java Build Path` -> `Classpath` -> `Add JARs...`.
-
-
-### JUnit
-Import `JUnit5` library under `Eclipse` -> `Project` -> `Properties` -> `Java Build Path` -> `Modulepath` -> `Add Library...` -> `JUnit` -> `Next`.
-
-### JavaFX
-**Note:** At first, please try to run the project once, and then follow these steps.
-1. Create a new `User Library` under `Eclipse` -> `Window` -> `Preferences` -> `Java` -> `Build Path` -> `User Libraries` -> `New`
-2. Name it anything you want, e.g., `JavaFX15`, and include the ***jars*** under either the `lib/linux/javafx-sdk-15` directory for Linux distro or the `lib/win/javafx-sdk-15` directory for Windows in the project.
-3. Include the library, e.g., `JavaFX15`, into the classpath.
-
-### Add VM arguments
-Click on `Run` -> `Run Configurations...`  -> `Java Application`, create a new launch configuration for your project and add these VM arguments:
-- For Linux distro: 
-> `--module-path lib/linux/javafx-sdk-15 --add-modules javafx.controls,javafx.fxml`
-- For Windows:
-> `--module-path lib/win/javafx-sdk-15 --add-modules javafx.controls,javafx.fxml`
-
-## Author
-- nguyenlm - Software Engeneering Student - k61
-- manhvd   - Software Engeneering Student - k61
-- hieudm   - ICT - k61
-- thanhld  - ICT - k62
+## Present video
+Link: https://husteduvn.sharepoint.com/:v:/s/NhmDP/EflhLw3WD0RFoi3_4GtFy70B9eIMCwU9pMA4MWDkAUwU-A?e=3QGEnW
