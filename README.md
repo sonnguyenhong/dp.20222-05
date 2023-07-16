@@ -26,4 +26,5 @@
     - Cài đặt: Cải tiến Caculator shipping fee khi có phương thức tính phí ship mới
 4. Hồ Hải Nam
     - Tìm kiếm: Các vi phạm Coupling, Cohension, SOLID, các Design Pattern đã có trong codebase
-    - Cài đặt:
+    - Cài đặt: Cải tiến ScreenHandle để khắc phục vấn đề khi chúng ta muốn thay đổi yêu cầu khi load giao diện,
+thay đổi cách xử lý khi xảy ra lỗi IOException. Cải tiến DeliveryInfo khi thay đổi thư viện tính khoảng cách
