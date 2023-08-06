@@ -59,6 +59,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	public PaymentScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
 		super(stage, screenPath);
 		try {
+            setupData(invoice);
 			setupFunctionality();
 		} catch (IOException ex) {
 			handleIOException(ex);
@@ -78,6 +79,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
                 confirmToPayOrder();
                 ((PaymentController) getBController()).emptyCart();
             } catch (Exception exp) {
+                System.out.println(exp);
                 System.out.println(exp.getStackTrace());
             }
         });
@@ -122,8 +124,9 @@ public class PaymentScreenHandler extends BaseScreenHandler {
             System.out.println("Credit card selected");
             CreditCard creditCard = new CreditCard(cardNumber.getText(), holderName.getText(), expirationDate.getText(), Integer.parseInt(securityCode.getText()));
             response = ctrl.payOrder(invoice.getAmount(), contents, creditCard);
+
         } else if (selectedRadioBtn.getText().toString().equals("Domestic Card")) {
-            System.out.println("Debit card selected");
+            System.out.println("Domestic Card  selected");
             DomesticCard domesticCard = new DomesticCard(cardNumber.getText(), holderName.getText(), expirationDate.getText(),issuingBank.getText());
             response = ctrl.payOrder(invoice.getAmount(), contents, domesticCard);
         } else {
