@@ -24,6 +24,7 @@ public class DeliveryInfo {
         this.address = address;
         this.shippingInstructions = shippingInstructions;
         this.distanceAdapter = distanceAdapter;
+        this.shippingFeeCaculator = shippingFeeCaculator;
     }
 
     public int calculateShippingFee(Order order) {
